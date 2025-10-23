@@ -1,6 +1,8 @@
 import edu.io.logic.DataPack;
+/*
 import edu.io.logic.DataSource;
 import edu.io.logic.HttpDataSource;
+*/
 import edu.io.logic.PriceFeed;
 import edu.io.pubsub.Publisher;
 import edu.io.pubsub.Subscriber;
@@ -10,9 +12,9 @@ import org.junit.jupiter.api.Test;
 import java.util.List;
 
 class Test_PubSub_4 {
-
-    PriceFeed priceFeed;
 /*
+    PriceFeed priceFeed;
+
     @Test
     void can_parametrize_data_type_in_publisher() {
         Assertions.assertTrue(0 < Publisher.class.getTypeParameters().length);
