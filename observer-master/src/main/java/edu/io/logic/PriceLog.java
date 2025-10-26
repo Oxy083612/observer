@@ -4,20 +4,25 @@ import edu.io.pubsub.Subscriber;
 
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
-public class PriceLog implements Subscriber {    // pliki zapisuje coś ten
-    private final Logger logger = Logger.getLogger(PriceLog.class.getName());
+public class PriceLog<T> implements Subscriber<T> {
+    private FileWriter writer;
 
     public PriceLog(){
-        // FileHandler
+        try{
+            writer = new FileWriter("price.log", true);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     @Override
-    public void update(Object data){
-        //logger.log(Level.INFO, "PriceLog: " + data);
+    public void update(T data){
+        try{
+            writer.write(data.toString() + "\n");
+            writer.flush();
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
     }
-
-
 }

@@ -3,19 +3,20 @@ package edu.io.pubsub;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Publisher {
+public class Publisher<T> {
 
-    List<Subscriber> subs = new ArrayList<>();
+    List<Subscriber<T>> subs = new ArrayList<>();
 
-    public void subscribe(Subscriber subscriber){
+    public void subscribe(Subscriber<T> subscriber){
         subs.add(subscriber);
+        System.out.println(subscriber);
     }
 
-    public void unsubscribe(Subscriber subscriber){
+    public void unsubscribe(Subscriber<T> subscriber){
         subs.remove(subscriber);
     }
 
-    public void publish(Object data){
+    public void publish(T data){
         for (Subscriber sub : subs){
             sub.update(data);
         }

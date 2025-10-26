@@ -3,6 +3,8 @@ import edu.io.logic.DataPack;
 import edu.io.logic.DataSource;
 import edu.io.logic.HttpDataSource;
 */
+import edu.io.logic.DataSource;
+import edu.io.logic.HttpDataSource;
 import edu.io.logic.PriceFeed;
 import edu.io.pubsub.Publisher;
 import edu.io.pubsub.Subscriber;
@@ -12,7 +14,7 @@ import org.junit.jupiter.api.Test;
 import java.util.List;
 
 class Test_PubSub_4 {
-/*
+
     PriceFeed priceFeed;
 
     @Test
@@ -50,7 +52,6 @@ class Test_PubSub_4 {
         priceFeed.refresh();
     }
 
-
     // -----------------------
     void _create_PriceFeed_mock() {
         priceFeed = new PriceFeed(new DataSource() {
@@ -67,5 +68,4 @@ class Test_PubSub_4 {
             }
         });
     }
- */
 }
