@@ -11,15 +11,11 @@ public class PriceFeed {
         this.source = dataSource;
     }
 
-    public PriceFeed(){
-
-    }
+    public PriceFeed(){}
 
     public void refresh(){
-
-    }
-
-    public DataPack getData(){
-        return new DataPack(3, 4);
+        DataPack data = source.getData();
+        System.out.println("Aktualna cena: " + data.price());
+        publisher.publish(data);
     }
 }
